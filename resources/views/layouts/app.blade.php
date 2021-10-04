@@ -65,7 +65,7 @@
         @else
 
 
-                    @if(Auth::user()->hasRole('admin'))
+                    @if(Auth::user()->role == 'admin')
                     <li class="nav-item">
                     <a class="nav-link" href="{{ asset('admin/view-users')}}">{{ __('Users') }}</a>
                     </li>
@@ -73,7 +73,7 @@
                     <a class="nav-link" href="{{ asset('admin/leave-applications')}}">{{ __('Leave Applications') }}</a>
                     </li>
                     @endif
-                    @if(Auth::user()->hasRole('supervisor'))
+                    @if(Auth::user()->role == 'supervisor')
                     <li class="nav-item">
                     <a class="nav-link" href="{{ asset('supervisor_approval')}}">{{ __('Approve Leave') }}</a>
                     </li>

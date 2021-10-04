@@ -265,12 +265,12 @@ class HomeController extends Controller
 				Mail::to($staff->email)->send(new RejectedMail($staff));
 
 			}else{
-
 				return back();
 			}
 
-
-
+			if(auth()->user()->role =="admin"){
+				return redirect('admin/leave-applications');
+			}
 
 		return redirect('supervisor_approval');
 

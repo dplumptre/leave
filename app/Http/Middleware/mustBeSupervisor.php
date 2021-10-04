@@ -16,7 +16,7 @@ class mustBeSupervisor
     public function handle($request, Closure $next)
     {
      
-        if (   $request->user()->hasRole('admin')  OR $request->user()->hasRole('supervisor')      ) {
+        if (   $request->user()->role == 'admin'  OR $request->user()->role == 'supervisor') {
             return $next($request); 
         }
 

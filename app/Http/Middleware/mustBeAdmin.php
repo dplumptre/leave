@@ -15,7 +15,7 @@ class mustBeAdmin
      */
     public function handle($request, Closure $next)
     {
-        if (! $request->user()->hasRole('admin')) {
+        if (! $request->user()->role == 'admin') {
             return redirect('access-denied');
         }
 
